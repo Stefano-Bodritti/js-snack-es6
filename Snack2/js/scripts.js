@@ -37,12 +37,19 @@ for (let i = 0; i < squadre.length; i++) {
   squadre[i].falliSubiti = numeroRandom(0, 30);
 }
 
-// 3. destrutturo e creo nuovo array con solo nomi e falli falli subiti
-const squadre2 = [];
-for (let i = 0; i < squadre.length; i++) {
-  const { nome, falliSubiti } = squadre[i];
-  squadre2.push({nome, falliSubiti});
-}
+// 3. destrutturo e creo nuovo array con solo nomi e falli subiti
+// metodo 1
+// const squadre2 = [];
+// for (let i = 0; i < squadre.length; i++) {
+//   const { nome, falliSubiti } = squadre[i];
+//   squadre2.push({nome, falliSubiti});
+// }
+
+// metodo 2
+const squadre2 = squadre.map((element) => {
+  const {nome, falliSubiti} = element;
+  return {nome, falliSubiti}
+});
 
 console.log(squadre2);
 for (let i = 0; i < squadre2.length; i++) {
